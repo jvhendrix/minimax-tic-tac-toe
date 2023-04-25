@@ -226,8 +226,6 @@ if __name__ == "__main__":
     ### Game loop
     while True:
         
-        
-        
         if game.player_turn:
             
             ### player turn
