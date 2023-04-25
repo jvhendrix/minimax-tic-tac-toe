@@ -202,14 +202,12 @@ def minimax(root :Node, depth, is_max):
         root.setValue(max_val)
         return max_val
     
-    else:
-        
+    else:   
         ### if minimize
         min_val = 10
         
         ### choose child with minimal value
-        for child in root.children:
-            
+        for child in root.children:    
             min_val = min(min_val, minimax(child, depth-1, True))
             
         root.setValue(min_val)
@@ -240,8 +238,8 @@ if __name__ == "__main__":
             
             ### check for win/draw
             win_condition = game.checkWin()
-            if win_condition == 1:
-                
+            
+            if win_condition == 1:  
                 print("YOU WIN!")
                 break
                         
@@ -249,8 +247,7 @@ if __name__ == "__main__":
                 print("\nDRAW! :/\n")
                 break
             
-        else:
-            
+        else:   
             ### computer turn, minimax to get values of nodes (computer is trying to minimize)
             minimax(root, game.getDepth(), False)
             
@@ -260,8 +257,7 @@ if __name__ == "__main__":
             ### choosing the child with minimal value
             for child in root.children:
                 
-                if child.getValue() < best_score:
-                    
+                if child.getValue() < best_score:         
                     best_score = child.getValue()
                     best_node = child
             
@@ -276,8 +272,8 @@ if __name__ == "__main__":
             
             ### check for computer win
             win_condition = game.checkWin()
-            if win_condition == -1:
-                
+            
+            if win_condition == -1:   
                 print("\nYOU LOSE! :(\n")
                 break
             
